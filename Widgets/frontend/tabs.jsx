@@ -11,15 +11,21 @@ class Tabs extends React.Component {
     }
 
     render(){
-        const allTabs = this.titles.map( title, idx => {
-            return <li>{this.}</li>
-        })
+
+
         return(
             <div>
                 <ul>
-                    <h1>{}</h1>
+                    {this.titles.map((title,idx) => {
+                        return <li onClick={updateContent} key={idx}>{title}</li>})
+                    }
                 </ul>
+                    < article >
+                        { this.content }
+                    </article>
             </div>
         )
     }
 }
+
+export default Tabs;
