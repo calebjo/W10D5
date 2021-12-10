@@ -5,5 +5,6 @@ import Clock from './frontend/clock';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById("root");
     ReactDOM.render(<Clock/>, root);
+    ReactDOM.render(<Tabs/>, root);
 });
 
