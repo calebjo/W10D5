@@ -29,7 +29,7 @@ class Tabs extends React.Component {
                     }
                 </ul>
                     < article >
-                        { this.content }
+                        { this.state.content }
                     </article>
             </div>
         );
