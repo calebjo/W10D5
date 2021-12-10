@@ -8,8 +8,7 @@ class Clock extends React.Component {
         this.tick = this.tick.bind(this);
     }
 
-    tick(e){
-        e.preventDefault();
+    tick(){
         const {date} = this.state;
         date.setSeconds(date.getSeconds() + 1);
         this.setState({
@@ -17,11 +16,19 @@ class Clock extends React.Component {
         });
     }
 
+    componentDidMount() {
+        setInterval(this.tick,1000);
+    }
+
     render(){
         return(
             <div>
-                <h1>{this.state.date.toString()}</h1>
-                <button onClick={this.tick}>Tick</button>
+                <h1>Clock</h1>
+                <div>
+                    {this.state.date.toString().slice(0,16)}
+                    <br />
+                    {this.state.date.toString().slice(16,25)}
+                </div>
             </div>
         );
     }
